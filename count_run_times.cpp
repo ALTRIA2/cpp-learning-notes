@@ -15,7 +15,8 @@ std::cout<<"Please input a number."<<std::endl;
 std::cin>>N;
 Test1(N);
 
-auto end=std::chrono::duration_cast<std::chrono::microseconds>(end - start);  //end record.
+auto end=std::chrono::steady_clock::now();  //end record.
+auto duration=std::chrono::duration_cast<std::chrono::microseconds>(end - start);  //Count.
 std::cout<<"The Program Run Times is : "<<float(duration.count()/1000000.0)<<" Seconds."<<std::endl;
 return 0;
 }
